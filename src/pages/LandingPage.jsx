@@ -6,7 +6,7 @@ import GroupStatus from '../components/GroupStatus';
 import GroupPriority from '../components/GroupPriority';
 import GroupUser from '../components/GroupUser';
 
-const LandingTC = ({ content, owner }) => {
+const LandingPage = ({ content, owner }) => {
     const [show, setShow] = useState(false);
     const handleClick = () => {
         setShow(!show);
@@ -35,4 +35,4 @@ const LandingTC = ({ content, owner }) => {
     )
 }
 
-export default LandingTC;
+export default LandingPage;
