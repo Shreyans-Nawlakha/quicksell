@@ -12,7 +12,8 @@ const PriorityWindow = ({ data, order, pri, header }) => {
                     tag: item.tag,
                     userId: item.userId,
                     state: item.status,
-                    Status: item.status
+                    Status: item.status,
+                    priority: item.priority
                 }
             )
         }
@@ -20,7 +21,11 @@ const PriorityWindow = ({ data, order, pri, header }) => {
     switch(order){
         case 'priority': group.sort((a,b)=> b.priority - a.priority)
         break;
-        case 'user': group.sort((a,b)=> b.userId - a.userId)
+        case 'user': 
+        group.sort(function(a,b){
+             let y=b.userId.split("-"); 
+             let x=a.userId.split("-");
+            return x[1]-y[1]})
         break;
         default: group.sort((a,b)=> b.priority - a.priority)
     }
