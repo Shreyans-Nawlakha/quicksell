@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../components/Card';
 
-const PriorityWindow = ({ data, pri, header }) => {
+const PriorityWindow = ({ data, order, pri, header }) => {
     const group = [];
     for (const item of data) {
         if (item.priority === pri) {
@@ -16,6 +16,13 @@ const PriorityWindow = ({ data, pri, header }) => {
                 }
             )
         }
+    }
+    switch(order){
+        case 'priority': group.sort((a,b)=> b.priority - a.priority)
+        break;
+        case 'user': group.sort((a,b)=> b.userId - a.userId)
+        break;
+        default: group.sort((a,b)=> b.priority - a.priority)
     }
     return (
         <div>

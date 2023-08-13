@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Dropdown = ({setGroup}) => {
+const Dropdown = ({setGroup, setOrder}) => {
 
     return (
         <div>
@@ -16,8 +16,9 @@ const Dropdown = ({setGroup}) => {
                 <br />
                 <div className=' flex justify-between'>
                     <label>Ordering by :</label>
-                    <select name="order" id="order" className=' m-1 border-1 border-black rounded-sm'>
+                    <select name="order" id="order" className=' m-1 border-1 border-black rounded-sm' onChange={(e)=>{setOrder(e.target.value)}}>
                         <option value="priority">Priority</option>
+                        <option value="user">user</option>
                     </select></div>
             </div>
 

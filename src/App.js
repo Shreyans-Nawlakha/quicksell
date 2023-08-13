@@ -2,7 +2,8 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 // import LandingPage from "./pages/LandingPage";  
 import LandingTC from "./pages/LandingTC";
-import data from "./Data.json"
+import data from "./Data.json";
+import DataSort from "./components/DataSort";
 
 function App() {
   // const [user, setUser] = useState([]);
@@ -23,10 +24,9 @@ function App() {
   const user = data.users
   return (
     <div className="App">
-      {/* <LandingPage content={tickets} owner={user} /> */}
       <LandingTC content={tickets} owner={user} />
     </div>
-    
+
   );
 }
 

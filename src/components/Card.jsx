@@ -28,6 +28,7 @@ const Card = ({ item }) => {
                         <div className="p-1 h-6 w-24 border rounded-lg shadow-md text-[10px] flex items-center justify-center gap-1">
                             <BsCircleFill className=' text-gray-400' />
                             <span>{item.tag}</span>
+                            <span>{item.priority}</span>
                         </div>
                         {/* {getname(item.userId)} */}
                     </div>
