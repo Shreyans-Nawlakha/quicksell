@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import settings from "../images/setting.png"
 import down from "../images/down-arrow.svg"
 import StatusWindow from "./StatusWindow";
@@ -49,17 +49,12 @@ const LandingTC = ({ content, owner }) => {
                         </div>);
                         case "user": return <>hwllo!</>;
                         default: return (<div className=" px-2 flex justify-start">
-                            {values.status.map((s) => {
-                                return <StatusWindow data={content} user={owner} value={s} />
+                            {values.priority.map((e) => {
+                                return <PriorityWindow data={content} user={owner} pri={e.n} header={e.value} />
                             })}</div>);
                     }
                 })()}
             </div>
-            {/* <div className=" px-4 flex justify-start">
-                <PriorityWindow data={content} user={owner} value={1} />
-                <PriorityWindow data={content} user={owner} value={2} />
-                <PriorityWindow data={content} user={owner} value={4} />
-            </div> */}
         </div>
     )
 }
