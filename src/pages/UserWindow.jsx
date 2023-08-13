@@ -27,15 +27,16 @@ const UserWindow = ({ data, order, userid, username }) => {
             break;
         default: group.sort((a, b) => b.priority - a.priority)
     }
-    console.log(group);
     return (
-        <div className='rounded-md px-1 max-w-xs'>
-            <div className=' p-2 font-semibold text-lg flex justify-between w-64'>
-                <p>{username}</p>
+        <div>
+        <div className='px-2 rounded-md max-w-xs'>
+            <div className=' px-3 py-2 text-sm flex justify-between gap-3 w-60'>
+                <p className=' font-medium'>{username}</p>
                 <p>{group.length}</p>
             </div>
             <Card item={group} />
         </div>
+    </div>
     )
 }
 

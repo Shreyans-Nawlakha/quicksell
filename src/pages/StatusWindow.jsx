@@ -30,10 +30,10 @@ const StatusWindow = ({ data, value, order }) => {
     
     
     return (
-        <div className='rounded-md px-1 max-w-xs border-2 border-gray-500'>
-            <div className=' px-3 py-2 text-sm flex justify-start gap-3 w-60'>
+        <div className='px-2 rounded-md max-w-xs'>
+            <div className=' px-3 py-2 text-sm flex justify-between gap-3 w-60'>
                 <p className=' font-medium'>{value}</p>
-                <p className=' '>{group.length}</p>
+                <p>{group.length}</p>
             </div>
             <Card item={group} />
         </div>
