@@ -14,9 +14,6 @@ const LandingPage = ({content , owner}) => {
 
     // get the value of order ie status priority etc
     const [group, setGroup] = useState("");
-    const handleGroupValue = (e)=>{
-        setGroup(e.target.value)
-    }
     console.log(group)
 
     return (
@@ -29,7 +26,7 @@ const LandingPage = ({content , owner}) => {
                     <img src={down} alt="v" className='w-3 pt-2' />
                 </button>
             </div>
-            {show ? <Dropdown handleGroupValue={handleGroupValue} /> : null}
+            {show ? <Dropdown setGroup={setGroup} /> : null}
             <div className=" px-4 flex justify-start">
                 <StatusWindow data={content} user={owner} value={"Todo"} />
                 <StatusWindow data={content} user={owner} value={"In progress"} />

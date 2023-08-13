@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../components/Card';
 
-const PriorityWindow = ({ data, user, pri, header }) => {
+const PriorityWindow = ({ data, pri, header }) => {
     const group = [];
     for (const item of data) {
         if (item.priority === pri) {
@@ -24,7 +24,7 @@ const PriorityWindow = ({ data, user, pri, header }) => {
                     <p>{header}</p>
                     <p>{group.length}</p>
                 </div>
-                <Card item={group} user={user} />
+                <Card item={group} />
             </div>
         </div>
     )

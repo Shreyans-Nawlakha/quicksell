@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const Dropdown = ({ handleGroupValue}) => {
-    const [value, setGroup] = useState();
-    const handleChange = (e) => {
-        setGroup(e.target.value);
-        handleGroupValue(value)
-    }
-    console.log("Dropdown:"+value)
+const Dropdown = ({setGroup}) => {
+
     return (
         <div>
-            <div name="display" className=' m-1 px-2 py-4 rounded-md border-1 border-black bg-[#f8f8fa] shadow-sm text-xs w-48'>
+            <div className=' -mt-3 mx- px-2 py-2 rounded-md border-1 border-black bg-[#f8f8fa] shadow-sm text-xs w-48 absolute'>
                 <div className=' flex justify-between'>
                     <label>Grouping by :</label>
-                    <select className=' m-1 border-1 border-black rounded-sm' onChange={handleChange}>
+                    <select className=' m-1 border-1 border-black rounded-sm' onChange={(e)=>{setGroup(e.target.value)}}>
                         <option value="status">Status</option>
                         <option value="user">User</option>
                         <option value="priority">Priority</option>
