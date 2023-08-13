@@ -4,7 +4,7 @@ import Card from '../components/Card'
 const UserWindow = ({data,userid ,username}) => {
     const group = [];
     for (const item of data) {
-        if (item.id === userid) {
+        if (item.userId === userid) {
             group.push(
                 {
                     id: item.id,
@@ -17,6 +17,7 @@ const UserWindow = ({data,userid ,username}) => {
             )
         }
     }
+    console.log(group);
     return (
         <div className='rounded-md px-1 max-w-xs'>
         <div className=' p-2 font-semibold text-lg flex justify-between w-64'>

@@ -7,6 +7,8 @@ import PriorityWindow from './PriorityWindow';
 import values from "../default.json"
 import GroupStatus from '../components/GroupStatus';
 import GroupPriority from '../components/GroupPriority';
+import UserWindow from './UserWindow';
+import GroupUser from '../components/GroupUser';
 
 const LandingTC = ({ content, owner }) => {
     const [show, setShow] = useState(false);
@@ -29,6 +31,7 @@ const LandingTC = ({ content, owner }) => {
             <div className='bg-[#edebeb]'>
                 {group==="status" && <GroupStatus content={content}/>}
                 {group==="priority" && <GroupPriority content={content}/>}
+                {group==="user" && <GroupUser content={content}/>}
             </div>
         </div>
     )
