@@ -6,7 +6,7 @@ import { MdSignalCellular4Bar } from "react-icons/md"
 import { MdSignalCellular3Bar } from "react-icons/md"
 import { MdSignalCellular1Bar } from "react-icons/md"
 import { AiOutlineFieldNumber } from "react-icons/ai"
-
+let m = 0;
 const Card = ({ item }) => {
     const data = item;
     return (
@@ -24,17 +24,21 @@ const Card = ({ item }) => {
                         </>
                         <div className=' flex gap-1'>
                             <span className='border rounded shadow-md w-6 h-6'>
-                            {/* <AiOutlineFieldNumber className='m-1'/> */}
-                                {item.priority === 0 && <AiOutlineFieldNumber className=' m-1'/>}
-                                {item.priority === 1 && <MdSignalCellular1Bar className='m-1'/>}
-                                {item.priority === 2 && <MdSignalCellular3Bar className='m-1'/>}
-                                {item.priority === 3 && <MdSignalCellular4Bar className='m-1'/>}
-                                {item.priority === 4 && <TbAlertSquareFilled className='m-1'/>}
+                                {/* <AiOutlineFieldNumber className='m-1'/> */}
+                                {item.priority === 0 && <AiOutlineFieldNumber className=' m-1' />}
+                                {item.priority === 1 && <MdSignalCellular1Bar className='m-1' />}
+                                {item.priority === 2 && <MdSignalCellular3Bar className='m-1' />}
+                                {item.priority === 3 && <MdSignalCellular4Bar className='m-1' />}
+                                {item.priority === 4 && <TbAlertSquareFilled className='m-1' />}
                             </span>
-                            <div className="p-1 h-6 w-24 border rounded-lg shadow-md text-[10px] flex items-center justify-center gap-1">
-                                <BsCircleFill className=' text-gray-400' />
-                                <span>{item.tag}</span>
-                            </div>
+                            {item.tag.map((e) => {
+                                m++;
+                                return (
+                                <div key={m} className="p-1 h-6 w-24 border rounded-lg shadow-md text-[10px] flex items-center justify-center gap-1">
+                                    <BsCircleFill className=' text-gray-400' />
+                                    <span>{item.tag}</span>
+                                </div>)
+                            })}
                         </div>
                         {/* {getname(item.userId)} */}
                     </div>
