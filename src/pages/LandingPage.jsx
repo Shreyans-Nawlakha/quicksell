@@ -7,16 +7,13 @@ import GroupPriority from '../components/GroupPriority';
 import GroupUser from '../components/GroupUser';
 import { HiOutlineClipboard } from "react-icons/hi"
 
-const gp = "priority"
-const or = "user"
-
 const getGroupState=()=>{
     const grp = localStorage.getItem("group")
-    return grp ? JSON.parse(grp) : gp
+    return grp ? JSON.parse(grp) : "status"
 }
 const getOrderState=()=>{
     const ord = localStorage.getItem("order")
-    return ord ? JSON.parse(ord) : or
+    return ord ? JSON.parse(ord) : "priority"
 }
 
 const LandingPage = ({ content, owner }) => {
