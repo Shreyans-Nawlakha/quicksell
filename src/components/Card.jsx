@@ -6,17 +6,22 @@ import { MdSignalCellular4Bar } from "react-icons/md"
 import { MdSignalCellular3Bar } from "react-icons/md"
 import { MdSignalCellular1Bar } from "react-icons/md"
 import { AiOutlineFieldNumber } from "react-icons/ai"
+import {BiSolidCircle} from "react-icons/bi"
 let m = 0;
 const Card = ({ item }) => {
     const data = item;
     return (
         <>
             {data.map((item) => {
+                let x=item.userId.split("-");
                 return (
                     <div className=" w-60 px-3 py-2 m-1 bg-white border border-gray-200 rounded-lg shadow-md transition duration-500 hover:scale-105" key={item.id}>
                         <div className="mb-1 px-1 text-sm dark:text-gray-400 flex justify-between">
                             <p>{item.id}</p>
-                            <p>{item.userId}</p>
+                            <div className='relative'>
+                                <p className=' border rounded-full w-6 h-6 text-center bg-gray-400 text-white'>{x[1]}</p>
+                                <BiSolidCircle className={`absolute left-4 -bottom-0.5 text-gray-300`} />
+                            </div>
                         </div>
                         <>
                             {/* <img src="" alt="Todo" /> */}
@@ -34,10 +39,10 @@ const Card = ({ item }) => {
                             {item.tag.map((e) => {
                                 m++;
                                 return (
-                                <div key={m} className="p-1 h-6 w-24 border rounded-lg shadow-md text-[10px] flex items-center justify-center gap-1">
-                                    <BsCircleFill className=' text-gray-400' />
-                                    <span>{item.tag}</span>
-                                </div>)
+                                    <div key={m} className="p-1 h-6 w-24 border rounded-lg shadow-md text-[10px] flex items-center justify-center gap-1">
+                                        <BsCircleFill className=' text-gray-400' />
+                                        <span>{item.tag}</span>
+                                    </div>)
                             })}
                         </div>
                         {/* {getname(item.userId)} */}
