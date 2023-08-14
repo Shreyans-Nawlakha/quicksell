@@ -1,41 +1,52 @@
 // card ke andar tickets wala data pass hoga
 import React from 'react';
-import { BsCircleFill } from 'react-icons/bs';
+import { BsCircleFill, BsThreeDots } from 'react-icons/bs';
 import { TbAlertSquareFilled } from "react-icons/tb"
-import { MdSignalCellular4Bar } from "react-icons/md"
-import { MdSignalCellular3Bar } from "react-icons/md"
-import { MdSignalCellular1Bar } from "react-icons/md"
-import { AiOutlineFieldNumber } from "react-icons/ai"
-import {BiSolidCircle} from "react-icons/bi"
+import { MdSignalCellular1Bar, MdSignalCellular3Bar, MdSignalCellular4Bar } from "react-icons/md"
+import { BiSolidCircle } from "react-icons/bi"
+import { BsCircle, BsCircleHalf, BsCheckCircleFill } from "react-icons/bs"
+import { MdCancel } from "react-icons/md"
+import { TbCircleDotted } from "react-icons/tb"
 let m = 0;
-const Card = ({ item }) => {
+const Card = ({ item, groupby }) => {
     const data = item;
+    console.log(groupby)
     return (
         <>
             {data.map((item) => {
-                let x=item.userId.split("-");
+                let x = item.userId.split("-");
                 return (
                     <div className=" w-60 px-3 py-2 m-1 bg-white border border-gray-200 rounded-lg shadow-md transition duration-500 hover:scale-105" key={item.id}>
                         <div className="mb-1 px-1 text-sm dark:text-gray-400 flex justify-between">
                             <p>{item.id}</p>
+                            {groupby !== "user" && 
                             <div className='relative'>
                                 <p className=' border rounded-full w-6 h-6 text-center bg-gray-400 text-white'>{x[1]}</p>
-                                <BiSolidCircle className={`absolute left-4 -bottom-0.5 text-gray-300`} />
-                            </div>
+                                <BiSolidCircle className={`absolute left-4 -bottom-0.5 text-gray-300`} />
+                            </div>}
                         </div>
-                        <>
-                            {/* <img src="" alt="Todo" /> */}
-                            <p className="mb-2 text-lg font-semibold tracking-tight text-gray-900 text-left ">{item.title}</p>
-                        </>
                         <div className=' flex gap-1'>
+                            {groupby !== "status" &&
+                                <span className=' mt-2' >
+                                    {item.state === 'Backlog' && <TbCircleDotted className=' text-gray-400' />}
+                                    {item.state === 'Todo' && <BsCircle className=' text-gray-400' />}
+                                    {item.state === 'In progress' && <BsCircleHalf className=' text-orange-400 rotate-180' />}
+                                    {item.state === 'Done' && <BsCheckCircleFill className=' text-blue-500' />}
+                                    {item.state === 'Cancelled' && <MdCancel className=' text-gray-400' />}
+                                </span>}
+                            <p className="mb-2 text-lg font-semibold tracking-tight text-gray-900 text-left ">{item.title}</p>
+                        </div>
+                        <div className=' flex gap-1'>
+                        {groupby !== "priority" &&
                             <span className='border rounded shadow-md w-6 h-6'>
                                 {/* <AiOutlineFieldNumber className='m-1'/> */}
-                                {item.priority === 0 && <AiOutlineFieldNumber className=' m-1' />}
-                                {item.priority === 1 && <MdSignalCellular1Bar className='m-1' />}
-                                {item.priority === 2 && <MdSignalCellular3Bar className='m-1' />}
-                                {item.priority === 3 && <MdSignalCellular4Bar className='m-1' />}
-                                {item.priority === 4 && <TbAlertSquareFilled className='m-1' />}
-                            </span>
+                                {item.priority === 0 && <BsThreeDots className=' m-1 text-gray-500' />}
+                                {item.priority === 1 && <MdSignalCellular1Bar className='m-1 text-gray-500' />}
+                                {item.priority === 2 && <MdSignalCellular3Bar className='m-1 text-gray-500' />}
+                                {item.priority === 3 && <MdSignalCellular4Bar className='m-1 text-gray-500' />}
+                                {item.priority === 4 && <TbAlertSquareFilled className='m-1 text-orange-400' />}
+                            </span>}
+
                             {item.tag.map((e) => {
                                 m++;
                                 return (

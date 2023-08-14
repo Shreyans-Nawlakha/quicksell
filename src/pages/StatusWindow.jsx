@@ -6,7 +6,7 @@ import {BsCircle , BsCircleHalf, BsCheckCircleFill} from "react-icons/bs"
 import {MdCancel} from "react-icons/md"
 import {TbCircleDotted} from "react-icons/tb"
 // these frame are according to the status 
-const StatusWindow = ({ data, value, order }) => {
+const StatusWindow = ({ data, value, groupby, order }) => {
     const group = [];
     for (const item of data) {
         if (item.status === value) {
@@ -51,7 +51,7 @@ const StatusWindow = ({ data, value, order }) => {
                         <BsThreeDots />
                     </div>
                 </div>
-                <Card item={group} />
+                <Card item={group} groupby={groupby} />
             </div>
         </div>
     )

@@ -2,6 +2,10 @@
   "status": ["Backlog", "Todo", "In progress", "Done", "Cancelled"],
   "priority": [
     {
+      "n": 0,
+      "value": "No priority"
+    },
+    {
       "n": 4,
       "value": "Urgent"
     },
@@ -16,10 +20,6 @@
     {
       "n": 1,
       "value": "Low"
-    },
-    {
-      "n": 0,
-      "value": "No priority"
     }
   ],
   "user": [

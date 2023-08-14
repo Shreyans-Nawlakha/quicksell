@@ -3,7 +3,7 @@ import Card from '../components/Card'
 import {AiOutlinePlus} from "react-icons/ai"
 import {BsThreeDots} from "react-icons/bs"
 
-const UserWindow = ({ data, order, userid, username }) => {
+const UserWindow = ({ data,groupby, order, userid, username }) => {
     const group = [];
     for (const item of data) {
         if (item.userId === userid) {
@@ -42,7 +42,7 @@ const UserWindow = ({ data, order, userid, username }) => {
                     <BsThreeDots />
                 </div>
             </div>
-            <Card item={group} />
+            <Card item={group} groupby={groupby} />
         </div>
     </div>
     )

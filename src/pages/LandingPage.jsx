@@ -42,11 +42,11 @@ const LandingPage = ({ content, owner }) => {
                     <HiOutlineClipboard className='scale-125 mx-1 text-black' />
                     <span className=' pl-2 justify-items-center'>KANBAN BOARD</span> </span>
             </div>
-            {show && <Dropdown setGroup={setGroup} setOrder={setOrder} setShow={setShow} />}
+            {show && <Dropdown group={group} setGroup={setGroup} order={order} setOrder={setOrder} setShow={setShow} />}
             <div className=' bg-[rgb(234,233,233)] max-h-screen 2xl:flex 2xl:justify-center xl:mt-1'>
-                {group === "status" && <GroupStatus content={content} order={order} />}
-                {group === "priority" && <GroupPriority content={content} order={order} />}
-                {group === "user" && <GroupUser content={content} order={order} />}
+                {group === "status" && <GroupStatus content={content} groupby={group} order={order} />}
+                {group === "priority" && <GroupPriority content={content}groupby={group} order={order} />}
+                {group === "user" && <GroupUser content={content} groupby={group} order={order} />}
             </div>
         </div>
     )
