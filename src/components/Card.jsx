@@ -20,7 +20,7 @@ const Card = ({ item }) => {
                         </div>
                         <>
                             {/* <img src="" alt="Todo" /> */}
-                            <p className="mb-2 text-lg font-medium tracking-tight text-gray-900 text-left ">{item.title}</p>
+                            <p className="mb-2 text-lg font-semibold tracking-tight text-gray-900 text-left ">{item.title}</p>
                         </>
                         <div className=' flex gap-1'>
                             <span className='border rounded shadow-md w-6 h-6'>
