@@ -13,7 +13,7 @@ const Card = ({ item }) => {
         <>
             {data.map((item) => {
                 return (
-                    <div className=" w-60 px-3 py-2 m-1 bg-white border border-gray-200 rounded-lg shadow-md" key={item.id}>
+                    <div className=" w-60 px-3 py-2 m-1 bg-white border border-gray-200 rounded-lg shadow-md transform transition duration-500 hover:scale-110 hover:object-top" key={item.id}>
                         <div className="mb-1 px-1 text-sm dark:text-gray-400 flex justify-between">
                             <p>{item.id}</p>
                             <p>{item.userId}</p>

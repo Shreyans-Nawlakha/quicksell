@@ -1,5 +1,7 @@
 import React from 'react'
 import Card from '../components/Card'
+import {AiOutlinePlus} from "react-icons/ai"
+import {BsThreeDots} from "react-icons/bs"
 
 const UserWindow = ({ data, order, userid, username }) => {
     const group = [];
@@ -29,10 +31,16 @@ const UserWindow = ({ data, order, userid, username }) => {
     }
     return (
         <div>
-        <div className='px-2 rounded-md max-w-xs'>
-            <div className=' px-3 py-2 text-sm flex justify-between gap-3 w-60'>
-                <p className=' font-medium'>{username}</p>
-                <p>{group.length}</p>
+        <div className='px-2 rounded-md max-w-xs mb-4'>
+            <div className=' px-4 py-2 text-sm flex justify-between gap-3 w-[245px]'>
+                <div className=' flex gap-2'>
+                    <p className=' font-medium'>{username}</p>
+                    <p>{group.length}</p>
+                </div>
+                <div className=' flex justify-center gap-1'>
+                    <AiOutlinePlus />
+                    <BsThreeDots />
+                </div>
             </div>
             <Card item={group} />
         </div>
