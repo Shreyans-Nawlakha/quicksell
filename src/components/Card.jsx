@@ -16,7 +16,7 @@ const Card = ({ item, groupby }) => {
             {data.map((item) => {
                 let x = item.userId.split("-");
                 return (
-                    <div className=" w-60 px-3 py-2 m-1 bg-white border border-gray-200 rounded-lg shadow-md transition duration-500 hover:scale-105" key={item.id}>
+                    <div className=" w-60 px-3 py-2 m-1 bg-white border border-gray-200 rounded-lg shadow-md transition duration-100 hover:bg-gray-100" key={item.id}>
                         <div className="mb-1 px-1 text-sm dark:text-gray-400 flex justify-between">
                             <p>{item.id}</p>
                             {groupby !== "user" && 
@@ -34,7 +34,7 @@ const Card = ({ item, groupby }) => {
                                     {item.state === 'Done' && <BsCheckCircleFill className=' text-blue-500' />}
                                     {item.state === 'Cancelled' && <MdCancel className=' text-gray-400' />}
                                 </span>}
-                            <p className="mb-2 text-lg font-semibold tracking-tight text-gray-900 text-left ">{item.title}</p>
+                            <p className="mb-2 text-lg font-semibold tracking-tight text-gray-900 text-left line-clamp-2 h-14">{item.title}</p>
                         </div>
                         <div className=' flex gap-1'>
                         {groupby !== "priority" &&
