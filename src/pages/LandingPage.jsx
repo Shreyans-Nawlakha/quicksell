@@ -7,9 +7,8 @@ import GroupPriority from '../components/GroupPriority';
 import GroupUser from '../components/GroupUser';
 import { HiOutlineClipboard } from "react-icons/hi"
 
-const gp = ["priority"]
-const or = ["user"]
-
+const gp = "priority"
+const or = "user"
 
 const getGroupState=()=>{
     const grp = localStorage.getItem("group")
