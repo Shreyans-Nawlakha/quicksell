@@ -25,7 +25,7 @@ const Card = ({ item }) => {
                         <div className=' flex gap-1'>
                             <span className='border rounded shadow-md w-6 h-6'>
                             {/* <AiOutlineFieldNumber className='m-1'/> */}
-                                {item.priority === 0 && <AiOutlineFieldNumber className=' py-1'/>}
+                                {item.priority === 0 && <AiOutlineFieldNumber className=' m-1'/>}
                                 {item.priority === 1 && <MdSignalCellular1Bar className='m-1'/>}
                                 {item.priority === 2 && <MdSignalCellular3Bar className='m-1'/>}
                                 {item.priority === 3 && <MdSignalCellular4Bar className='m-1'/>}
