@@ -8,6 +8,7 @@ const Dropdown = ({ setGroup, setOrder }) => {
                 <div className=' flex justify-between'>
                     <label>Grouping by :</label>
                     <select className=' m-1 border-1 border-black rounded-sm' onChange={(e) => { setGroup(e.target.value) }}>
+                        <option value="">--select--</option>
                         <option value="status">Status</option>
                         <option value="user">User</option>
                         <option value="priority">Priority</option>
@@ -17,6 +18,7 @@ const Dropdown = ({ setGroup, setOrder }) => {
                 <div className=' flex justify-between'>
                     <label>Ordering by :</label>
                     <select name="order" id="order" className=' m-1 border-1 border-black rounded-sm' onChange={(e) => { setOrder(e.target.value) }}>
+                        <option value="">--select--</option>
                         <option value="priority">Priority</option>
                         <option value="user">user</option>
                     </select></div>
