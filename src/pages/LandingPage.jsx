@@ -6,7 +6,6 @@ import GroupStatus from '../components/GroupStatus';
 import GroupPriority from '../components/GroupPriority';
 import GroupUser from '../components/GroupUser';
 import {HiOutlineClipboard} from "react-icons/hi"
-import "./LandingPage.css"
 
 const LandingPage = ({ content, owner }) => {
     const [show, setShow] = useState(false);
