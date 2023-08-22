@@ -1,0 +1,32 @@
+{
+  "status": ["Backlog", "Todo", "In progress", "Done", "Cancelled"],
+  "priority": [
+    {
+      "n": 0,
+      "value": "No priority"
+    },
+    {
+      "n": 4,
+      "value": "Urgent"
+    },
+    {
+      "n": 3,
+      "value": "High"
+    },
+    {
+      "n": 2,
+      "value": "Medium"
+    },
+    {
+      "n": 1,
+      "value": "Low"
+    }
+  ],
+  "user": [
+    { "id": "usr-1", "name": "Anoop sharma", "available": false },
+    { "id": "usr-2", "name": "Yogesh", "available": true },
+    { "id": "usr-3", "name": "Shankar Kumar", "available": true },
+    { "id": "usr-4", "name": "Ramesh", "available": true },
+    { "id": "usr-5", "name": "Suresh", "available": true }
+  ]
+}
